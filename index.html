@@ -5,195 +5,454 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nominate Satish Kumar | Snowflake Data Superhero 2027</title>
 <meta name="description" content="Support Satish Kumar's nomination for the 2027 Snowflake Data Superhero Program. Takes about 5 minutes.">
+<meta name="theme-color" content="#F2F6F8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#09131A" media="(prefers-color-scheme: dark)">
 <meta property="og:title" content="Nominate Satish Kumar for Snowflake Data Superhero 2027">
 <meta property="og:description" content="200+ articles, 45+ open-source repos, 2026 Community Awards Open Source Impact Winner (APJ). Nomination takes ~5 minutes.">
 <meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Source+Serif+4:opsz,wght@8..60,400..600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#f6f9fc; --card:#ffffff; --ink:#10243a; --muted:#5a6b7e; --line:#dce6f0;
-    --accent:#0b7fc7; --accent-2:#0a5f96; --soft:#e8f4fc; --ok:#1a8f5a;
+    --paper:#F2F6F8; --surface:#FFFFFF; --ink:#0D1A23; --ink-2:#44586A;
+    --rule:#D3DFE6; --ice:#DCEBF2; --glacier:#006E96; --signal:#00A8E0;
+    --display:"Bricolage Grotesque","Segoe UI",system-ui,-apple-system,sans-serif;
+    --serif:"Source Serif 4",Charter,"Iowan Old Style",Georgia,serif;
   }
   @media (prefers-color-scheme: dark){
-    :root{ --bg:#0b1622; --card:#122234; --ink:#e8f1f9; --muted:#9db0c3; --line:#223a52; --accent:#4fb4f0; --accent-2:#7cc8f5; --soft:#0f2a40; --ok:#4cc38a; }
+    :root{
+      --paper:#09131A; --surface:#0F1D27; --ink:#E7F0F5; --ink-2:#9FB3C2;
+      --rule:#1E3342; --ice:#12303F; --glacier:#5CC8F0; --signal:#5CC8F0;
+    }
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-  a{color:var(--accent)}
-  .wrap{max-width:860px;margin:0 auto;padding:0 20px}
-  header.hero{padding:64px 0 40px;text-align:center}
-  .eyebrow{display:inline-block;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2);background:var(--soft);padding:6px 14px;border-radius:999px;font-weight:600}
-  h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:18px 0 12px}
-  .lead{color:var(--muted);font-size:18px;max-width:620px;margin:0 auto 28px}
-  .btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;padding:14px 28px;border-radius:10px;border:0;font-size:16px;cursor:pointer;transition:transform .15s,background .15s}
-  .btn:hover{background:var(--accent-2);transform:translateY(-1px)}
-  .btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--line);padding:6px 12px;font-size:13px;border-radius:8px}
-  .btn.ghost:hover{background:var(--soft);transform:none}
-  .sub{font-size:14px;color:var(--muted);margin-top:12px}
-  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:8px 0 40px}
-  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 14px;text-align:center}
-  .stat b{display:block;font-size:28px;color:var(--accent)}
-  .stat span{font-size:13px;color:var(--muted)}
-  section{margin:0 0 36px}
-  h2{font-size:24px;margin:0 0 14px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
-  .award{display:flex;gap:14px;align-items:center;background:var(--soft);border-radius:14px;padding:16px 20px;margin-bottom:36px}
-  .award .ic{font-size:28px}
-  .steps{list-style:none;margin:0;padding:0;display:grid;gap:14px}
-  .steps li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
-  .steps h3{margin:0 0 6px;font-size:17px}
-  .steps h3 small{font-weight:500;color:var(--muted);font-size:14px}
-  .steps p{margin:6px 0 0;color:var(--muted)}
-  .steps ul{margin:8px 0 0;padding-left:20px;color:var(--muted)}
-  .kv{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--line);flex-wrap:wrap}
-  .kv:first-of-type{border-top:0}
-  .kv .k{font-size:13px;color:var(--muted);min-width:90px}
-  .kv .v{flex:1;word-break:break-all;font-size:15px}
-  .links{display:grid;gap:0}
-  .tick{color:var(--ok);font-weight:700}
-  .cta{text-align:center;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:36px 20px}
-  footer{text-align:center;color:var(--muted);font-size:14px;padding:30px 0 60px}
-  .video-wrap{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#000}
+  @media (prefers-reduced-motion: no-preference){ html{scroll-behavior:smooth} }
+  body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.65 var(--serif);-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--glacier);outline-offset:3px;border-radius:4px}
+  .wrap{max-width:1160px;margin-inline:auto;padding-inline:clamp(20px,4vw,40px)}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .skip{position:absolute;left:16px;top:-60px;background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:8px;font-family:var(--display);font-weight:600;z-index:10;text-decoration:none}
+  .skip:focus{top:16px}
+
+  /* Top bar */
+  .top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px;font-family:var(--display);font-size:15px;font-weight:600}
+  .top a{text-decoration:none}
+  .top .brand{font-size:17px;letter-spacing:-.01em}
+  .top .ext{display:inline-flex;align-items:center;gap:8px;color:var(--ink-2);text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:4px}
+  .top .ext:hover{color:var(--glacier);text-decoration-color:currentColor}
+
+  /* Shared type */
+  h1,h2,h3{font-family:var(--display);margin:0}
+  h2{font-size:clamp(28px,3.4vw,40px);line-height:1.1;font-weight:700;letter-spacing:-.02em}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border:0;border-radius:12px;background:var(--ink);color:var(--paper);font:600 17px/1 var(--display);text-decoration:none;cursor:pointer;transition:background-color .15s}
+  .btn:hover{background:var(--glacier);color:var(--paper)}
+  .textlink{font-family:var(--display);font-weight:600;font-size:16px;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:5px;text-decoration-thickness:2px}
+  .textlink:hover{color:var(--glacier);text-decoration-color:currentColor}
+  .copy{min-height:36px;padding:0 14px;border:1px solid var(--rule);border-radius:8px;background:transparent;color:var(--ink);font:600 14px/1 var(--display);cursor:pointer;transition:background-color .15s,border-color .15s,color .15s}
+  .copy:hover{background:var(--ice)}
+  .copy[data-state="copied"]{border-color:var(--glacier);color:var(--glacier)}
+
+  /* Hero */
+  .hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center;padding-block:clamp(24px,5vw,64px) clamp(48px,8vw,96px)}
+  h1{font-size:clamp(44px,7.2vw,96px);line-height:.95;font-weight:800;letter-spacing:-.035em;margin-bottom:24px}
+  .lead{font-size:clamp(18px,1.7vw,21px);line-height:1.6;color:var(--ink-2);max-width:34em;margin:0 0 32px}
+  .actions{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px}
+  .hint{font-family:var(--display);font-size:15px;color:var(--ink-2);margin:14px 0 0}
+
+  .window{margin-top:40px;padding-top:20px;border-top:1px solid var(--rule);max-width:460px}
+  .window-status{font:600 18px/1.35 var(--display);margin:0}
+  .track{position:relative;height:6px;border-radius:999px;background:var(--ice);margin:18px 0 10px}
+  .fill{position:absolute;left:0;top:0;bottom:0;width:var(--p,0%);border-radius:inherit;background:var(--signal)}
+  .pin{position:absolute;top:50%;left:var(--p,0%);width:14px;height:14px;border-radius:50%;background:var(--ink);transform:translate(-50%,-50%);box-shadow:0 0 0 3px var(--paper)}
+  .ends{display:flex;justify-content:space-between;font:500 14px/1.4 var(--display);color:var(--ink-2)}
+  .note{font:400 14px/1.5 var(--display);color:var(--ink-2);margin:10px 0 0}
+
+  .video-wrap{position:relative;width:100%;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:#000;border:1px solid var(--rule)}
   .video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:999px;font-size:14px;opacity:0;pointer-events:none;transition:.25s}
-  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  figure{margin:0}
+  figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;margin-top:12px;font:500 14px/1.4 var(--display);color:var(--ink-2)}
+  figcaption a{text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--rule)}
+  figcaption a:hover{color:var(--glacier);text-decoration-color:currentColor}
+
+  /* Proof */
+  .proof{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);border-block:1px solid var(--rule)}
+  .proof li{padding:28px 20px}
+  .proof li+li{border-left:1px solid var(--rule)}
+  .proof b{display:block;font:700 clamp(30px,3.4vw,44px)/1 var(--display);letter-spacing:-.02em}
+  .proof span{display:block;margin-top:10px;font:400 14px/1.4 var(--display);color:var(--ink-2)}
+
+  /* Award */
+  .award{display:grid;grid-template-columns:auto 1fr;gap:24px 32px;align-items:center;margin-top:clamp(40px,6vw,72px);padding:clamp(24px,3vw,36px);border-radius:18px;background:var(--ice)}
+  .award .year{font:800 clamp(44px,6vw,72px)/1 var(--display);letter-spacing:-.04em;color:var(--glacier)}
+  .award h3{font-size:clamp(20px,2.2vw,26px);line-height:1.25;font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
+  .award p{margin:0;color:var(--ink-2);max-width:60ch}
+  .award .award-link{margin-top:10px;font:600 16px/1.4 var(--display)}
+  .award a{color:var(--ink);text-underline-offset:4px}
+  .award a:hover{color:var(--glacier)}
+
+  /* Sections */
+  .block{padding-block:clamp(56px,9vw,112px) 0}
+  .split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,72px)}
+  .prose p{margin:0 0 1.1em;max-width:62ch;font-size:19px;line-height:1.7}
+  .prose p:last-child{margin-bottom:0}
+  .prose strong{font-weight:600}
+
+  .work{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(24px,4vw,56px);margin-top:28px}
+  .row{display:block;padding:28px 0;border-top:1px solid var(--rule);text-decoration:none}
+  .row .src{display:flex;align-items:center;gap:10px;font:500 14px/1.4 var(--display);color:var(--ink-2)}
+  .ico{width:22px;height:22px;border-radius:5px;flex:none;box-shadow:0 0 0 1px var(--rule)}
+  .ico.gh{background:#fff;border-radius:50%}
+  .ico.com{background:var(--glacier);padding:3px;fill:none;stroke:var(--paper);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .mark{width:20px;height:auto;flex:none}
+  .row .handle{display:block;margin:6px 0 8px;font:700 clamp(24px,2.4vw,30px)/1.15 var(--display);letter-spacing:-.02em;overflow-wrap:anywhere;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:6px;text-decoration-thickness:3px;transition:text-decoration-color .15s,color .15s}
+  .row:hover .handle{color:var(--glacier);text-decoration-color:currentColor}
+  .row .desc{color:var(--ink-2);max-width:38ch}
+
+  /* Guide */
+  .guide{display:grid;grid-template-columns:260px minmax(0,1fr);gap:clamp(32px,6vw,80px);align-items:start}
+  .rail{position:sticky;top:24px}
+  .rail ol{list-style:none;margin:0 0 24px;padding:0}
+  .rail ol a{display:block;padding:9px 0 9px 16px;border-left:2px solid var(--rule);font:500 15px/1.35 var(--display);color:var(--ink-2);text-decoration:none;transition:color .15s,border-color .15s}
+  .rail ol a:hover{color:var(--ink)}
+  .rail ol a[aria-current="true"]{border-left-color:var(--glacier);color:var(--ink);font-weight:600}
+  .rail .btn{width:100%;min-height:48px;font-size:16px;padding:0 16px}
+  .guide-intro{color:var(--ink-2);margin:12px 0 28px;max-width:56ch}
+  .q{list-style:none;margin:0;padding:0}
+  .q>li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:0 8px;padding-block:32px;border-top:1px solid var(--rule);scroll-margin-top:16px}
+  .qn{font:700 15px/1.9 var(--display);color:var(--glacier)}
+  .q h3{font-size:clamp(19px,2vw,22px);line-height:1.3;font-weight:600;letter-spacing:-.01em;margin-bottom:10px}
+  .q h3 small{font-weight:500;font-size:15px;color:var(--ink-2)}
+  .q p{margin:8px 0 0;color:var(--ink-2)}
+  .q ul{margin:10px 0 0;padding-left:20px;color:var(--ink-2)}
+  .q li li{padding:0;border:0;display:list-item}
+  .ticks{list-style:none;padding-left:0 !important}
+  .q .ticks li{position:relative;padding-left:26px;margin-bottom:4px}
+  .ticks li::before{content:"\2713";position:absolute;left:0;color:var(--glacier);font-weight:700}
+  .kvs{margin-top:8px}
+  .kv{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--rule)}
+  .kv:first-child{border-top:0}
+  .kv .k{font:500 14px/1.4 var(--display);color:var(--ink-2)}
+  .kv .v{font:500 16px/1.4 var(--display);overflow-wrap:anywhere}
+  .kv a.v{text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:4px}
+  .kv a.v:hover{color:var(--glacier);text-decoration-color:currentColor}
+  .kv .v.blank{color:var(--ink-2)}
+
+  /* Final call */
+  .final{margin-top:clamp(64px,10vw,128px);background:var(--ink);color:var(--paper);padding-block:clamp(56px,9vw,104px)}
+  .final h2{font-size:clamp(34px,5vw,64px);line-height:1;letter-spacing:-.03em;max-width:14em;margin-bottom:32px}
+  .final .actions{margin-bottom:32px}
+  .final .btn{background:var(--paper);color:var(--ink)}
+  .final .btn:hover{background:var(--ice);color:var(--ink)}
+  .final p{margin:0 0 8px;max-width:52ch;color:color-mix(in srgb,var(--paper) 78%,var(--ink))}
+  .final a{color:inherit;text-underline-offset:4px}
+  .final .copy{border-color:color-mix(in srgb,var(--paper) 40%,var(--ink));color:var(--paper)}
+  .final .copy:hover{background:color-mix(in srgb,var(--paper) 14%,var(--ink))}
+  .final .copy[data-state="copied"]{border-color:var(--paper);color:var(--paper)}
+  .final :focus-visible{outline-color:var(--paper)}
+
+  footer{padding-block:36px 64px;font:400 14px/1.6 var(--display);color:var(--ink-2)}
+  footer strong{color:var(--ink);font-weight:600}
+  footer .fine{display:block;margin-top:8px;font-size:13px}
+
+  @media (max-width:959px){
+    .hero{grid-template-columns:1fr}
+    .guide{grid-template-columns:1fr}
+    .rail{display:none}
+    .split{grid-template-columns:1fr}
+    .work{grid-template-columns:1fr}
+  }
+  @media (max-width:719px){
+    .proof{grid-template-columns:1fr 1fr}
+    .proof li{border-top:1px solid var(--rule);padding:22px 4px}
+    .proof li:nth-child(-n+2){border-top:0}
+    .proof li+li{border-left:0}
+    .proof li:nth-child(even){padding-left:20px}
+    .proof li:last-child{grid-column:1 / -1}
+    .work{grid-template-columns:1fr}
+    .award{grid-template-columns:1fr}
+  }
+  @media (max-width:559px){
+    .q>li{grid-template-columns:1fr}
+    .qn{line-height:1.4;margin-bottom:4px}
+    .kv{grid-template-columns:minmax(0,1fr) auto}
+    .kv .k{grid-column:1 / -1}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important}
+  }
 </style>
 </head>
 <body>
+<a class="skip" href="#guide">Skip to the nomination guide</a>
+
 <div class="wrap">
-
-  <header class="hero">
-    <span class="eyebrow">2027 Snowflake Data Superhero Program</span>
-    <h1>Nominate Satish Kumar</h1>
-    <p class="lead">Learning, building and sharing practical Snowflake knowledge with the community since September 2024. If my work has helped you, a nomination would mean a lot.</p>
-    <a class="btn" href="https://www.surveymonkey.com/r/dshnomination?_fsi=W0NJ6JXv" target="_blank" rel="noopener">Open the nomination form</a>
-    <div class="sub">Takes about 5 minutes · <a href="#guide">Jump to the quick guide</a></div>
-    <div class="sub">Applications for the 2027 program open on November 9 and close on December 18, 2026. Nominations are welcome year-round. <a href="https://www.snowflake.com/en/data-superheroes/" target="_blank" rel="noopener">Official program page</a></div>
-  </header>
-
-  <section aria-label="How to Vote Video">
-    <div class="video-wrap">
-      <iframe src="https://www.youtube-nocookie.com/embed/1nuJt4taz9E" title="How to Vote Video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </div>
-    <div class="sub" style="text-align:center">How to Vote Video · <a href="https://youtu.be/1nuJt4taz9E" target="_blank" rel="noopener">Watch on YouTube</a></div>
-  </section>
-
-  <div class="stats" aria-label="Highlights">
-    <div class="stat"><b>200+</b><span>Technical articles</span></div>
-    <div class="stat"><b>45+</b><span>Public GitHub repos</span></div>
-    <div class="stat"><b>12,000+</b><span>LinkedIn connections</span></div>
-    <div class="stat"><b>2024</b><span>Snowflake Squad member since</span></div>
-    <div class="stat"><b>2×</b><span>Snowflake Certified</span></div>
+  <div class="top">
+    <a class="brand" href="#top">Satish Kumar</a>
+    <a class="ext" href="https://www.snowflake.com/en/data-superheroes/" target="_blank" rel="noopener"><img class="mark" src="data:image/png;base64,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" alt="" width="20" height="19">Official program page</a>
   </div>
-
-  <div class="award">
-    <div class="ic" aria-hidden="true">🏆</div>
-    <div><strong>2026 Snowflake Community Awards: Open Source Impact Winner (APJ)</strong><br>
-    <span style="color:var(--muted)">One of 18 winners from 704 nominations. Thank you to everyone who nominated and voted. <a href="https://satishkumarai.github.io/vote4satish/" target="_blank" rel="noopener">Read the award story</a></span></div>
-  </div>
-
-  <section>
-    <h2>Explore my work</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px">
-      <a class="card" href="https://snowflakechronicles.medium.com/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
-        <div style="font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em">Medium</div>
-        <div style="font-size:20px;font-weight:700;margin:4px 0;color:var(--accent)">snowflakechronicles</div>
-        <div style="color:var(--muted)">200+ Snowflake articles and tutorials</div>
-      </a>
-      <a class="card" href="https://github.com/satishkumarai" target="_blank" rel="noopener" style="text-decoration:none;color:inherit">
-        <div style="font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em">GitHub</div>
-        <div style="font-size:20px;font-weight:700;margin:4px 0;color:var(--accent)">satishkumarai</div>
-        <div style="color:var(--muted)">Open-source Snowflake projects and reference implementations</div>
-      </a>
-    </div>
-  </section>
-
-  <section>
-    <h2>What I do</h2>
-    <div class="card">
-      <p style="margin-top:0">I write and publish technical articles through <strong>Snowflake Chronicles</strong> on Medium, build and open-source Snowflake projects on GitHub, and share what I learn on LinkedIn. What I value most is hearing from practitioners who use these ideas to solve real-world problems.</p>
-      <p style="margin-bottom:0">Knowing that this work helps others learn, solve problems and build better Snowflake solutions is what keeps me going.</p>
-    </div>
-  </section>
-
-  <section id="guide">
-    <h2>Quick guide to the nomination form</h2>
-    <p style="color:var(--muted);margin-top:-6px">Six short questions, all required. The details below are here so you can copy and paste.</p>
-    <ol class="steps">
-      <li>
-        <h3>Q1 · Your contact information</h3>
-        <p>Enter your own name, company and email address.</p>
-      </li>
-      <li>
-        <h3>Q2 · Nominee's contact information</h3>
-        <div class="kv"><span class="k">Name</span><span class="v">Satish Kumar</span><button class="btn ghost" data-copy="Satish Kumar">Copy</button></div>
-        <div class="kv"><span class="k">Company</span><span class="v">LTM (previously LTIMindtree)</span><button class="btn ghost" data-copy="LTM (previously LTIMindtree)">Copy</button></div>
-        <div class="kv"><span class="k">Email</span><span class="v">skrz2014@gmail.com</span><button class="btn ghost" data-copy="skrz2014@gmail.com">Copy</button></div>
-      </li>
-      <li>
-        <h3>Q3 · Where can we find the nominee online?</h3>
-        <div class="links">
-          <div class="kv"><span class="k">LinkedIn</span><a class="v" href="https://www.linkedin.com/in/satishkumar-snowflake/" target="_blank" rel="noopener">linkedin.com/in/satishkumar-snowflake</a><button class="btn ghost" data-copy="https://www.linkedin.com/in/satishkumar-snowflake/">Copy</button></div>
-          <div class="kv"><span class="k">Community</span><a class="v" href="https://community.snowflake.com/s/profile/0053r00000AP1sB" target="_blank" rel="noopener">Snowflake Community profile</a><button class="btn ghost" data-copy="https://community.snowflake.com/s/profile/0053r00000AP1sB">Copy</button></div>
-          <div class="kv"><span class="k">Medium</span><a class="v" href="https://snowflakechronicles.medium.com/" target="_blank" rel="noopener">snowflakechronicles.medium.com</a><button class="btn ghost" data-copy="https://snowflakechronicles.medium.com/">Copy</button></div>
-          <div class="kv"><span class="k">Podcast</span><span class="v">Leave blank</span></div>
-          <div class="kv"><span class="k">Other</span><a class="v" href="https://github.com/satishkumarai" target="_blank" rel="noopener">github.com/satishkumarai</a><button class="btn ghost" data-copy="https://github.com/satishkumarai">Copy</button></div>
-          <div class="kv"><span class="k">Other</span><a class="v" href="https://x.com/snowflakechrons" target="_blank" rel="noopener">x.com/snowflakechrons</a><button class="btn ghost" data-copy="https://x.com/snowflakechrons">Copy</button></div>
-        </div>
-      </li>
-      <li>
-        <h3>Q4 · How does the nominee contribute to the technical community?</h3>
-        <p><span class="tick">✓</span> They build apps and contribute to open-source projects.<br>
-        <span class="tick">✓</span> They write and publish articles and blogs.</p>
-        <p>Leave other options unselected unless you have personally seen those contributions.</p>
-      </li>
-      <li>
-        <h3>Q5 · What makes your nominee a great candidate? <small>(your own words)</small></h3>
-        <p>A few honest lines are plenty. If it helps, you could mention:</p>
-        <ul>
-          <li>How you know my work and how long you've followed it</li>
-          <li>Which article, repo or video helped you, and what problem it solved</li>
-          <li>Whether you've used something I shared at work or in your learning</li>
-          <li>How these contributions benefit the wider Snowflake community</li>
-        </ul>
-      </li>
-      <li>
-        <h3>Q6 · Can we mention that the nomination came from you?</h3>
-        <p>Choose Yes or No. It's entirely your call, and either is fine. There's also an optional box to email yourself a copy of your responses.</p>
-      </li>
-    </ol>
-  </section>
-
-  <section class="cta">
-    <h2 style="margin-top:0">Ready? It takes about 5 minutes.</h2>
-    <a class="btn" href="https://www.surveymonkey.com/r/dshnomination?_fsi=W0NJ6JXv" target="_blank" rel="noopener">Nominate Satish Kumar</a>
-    <div class="sub">Program details: <a href="https://www.snowflake.com/en/data-superheroes/" target="_blank" rel="noopener">snowflake.com/en/data-superheroes</a></div>
-  </section>
-
-  <footer>
-    Thank you for being part of a community that learns, builds and grows together.<br>
-    <strong>Satish Kumar</strong> · Snowflake Chronicles<br>
-    <span style="font-size:12px">Personal page. Not affiliated with or endorsed by Snowflake Inc. or LTIMindtree.</span>
-  </footer>
 </div>
 
-<div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
+<main id="top">
+  <div class="wrap">
+
+    <section class="hero" aria-labelledby="title">
+      <div>
+        <h1 id="title">Nominate Satish Kumar</h1>
+        <p class="lead">Learning, building and sharing practical Snowflake knowledge with the community since September 2024. If my work has helped you, a nomination would mean a lot.</p>
+        <div class="actions">
+          <a class="btn" href="https://www.surveymonkey.com/r/dshnomination?_fsi=W0NJ6JXv" target="_blank" rel="noopener">Open the nomination form</a>
+          <a class="textlink" href="#guide">Jump to the quick guide</a>
+        </div>
+        <p class="hint">Takes about 5 minutes.</p>
+
+        <div class="window" id="window" data-open="2026-11-09" data-close="2026-12-18">
+          <p class="window-status" id="window-status">Applications for the 2027 program open on November 9 and close on December 18, 2026.</p>
+          <div class="track" id="track" role="img" aria-label="Application window progress">
+            <span class="fill"></span><span class="pin"></span>
+          </div>
+          <div class="ends"><span>Opens Nov 9</span><span>Closes Dec 18</span></div>
+          <p class="note">Nominations are welcome year-round.</p>
+        </div>
+      </div>
+
+      <figure>
+        <div class="video-wrap">
+          <iframe src="https://www.youtube-nocookie.com/embed/1nuJt4taz9E" title="How to Vote" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <figcaption>
+          <span>How to Vote</span>
+          <a href="https://youtu.be/1nuJt4taz9E" target="_blank" rel="noopener">Watch on YouTube</a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <ul class="proof" aria-label="Highlights">
+      <li><b>200+</b><span>Technical articles</span></li>
+      <li><b>45+</b><span>Public GitHub repos</span></li>
+      <li><b>12,000+</b><span>LinkedIn connections</span></li>
+      <li><b>2024</b><span>Snowflake Squad member since</span></li>
+      <li><b>2×</b><span>Snowflake Certified</span></li>
+    </ul>
+
+    <section class="award" aria-labelledby="award-title">
+      <div class="year" aria-hidden="true">2026</div>
+      <div>
+        <h3 id="award-title">2026 Snowflake Community Awards – Open Source Impact Winner (APJ)</h3>
+        <p>One of 18 winners from 704 nominations. I was nominated by 12 community members, reached the finalist round, and the category was decided with community voting. Thank you to everyone who nominated and voted.</p>
+        <p class="award-link"><a href="https://satishkumarai.github.io/vote4satish/" target="_blank" rel="noopener">Read the award story</a></p>
+      </div>
+    </section>
+
+    <section class="block" aria-labelledby="work-title">
+      <h2 id="work-title">Explore my work</h2>
+      <div class="work">
+        <a class="row" href="https://snowflakechronicles.medium.com/" target="_blank" rel="noopener">
+          <span class="src"><img class="ico" src="data:image/png;base64,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" alt="" width="22" height="22">Medium</span>
+          <span class="handle">snowflakechronicles</span>
+          <span class="desc">200+ Snowflake articles and tutorials</span>
+        </a>
+        <a class="row" href="https://github.com/satishkumarai" target="_blank" rel="noopener">
+          <span class="src"><img class="ico gh" src="data:image/png;base64,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" alt="" width="22" height="22">GitHub</span>
+          <span class="handle">satishkumarai</span>
+          <span class="desc">Open-source Snowflake projects and reference implementations</span>
+        </a>
+        <a class="row" href="https://satishkumarai.github.io/vote4satish/" target="_blank" rel="noopener">
+          <span class="src"><svg class="ico com" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><circle cx="17" cy="9" r="2.5"/><path d="M16.5 13.7c2.7 0 4.5 1.8 4.5 4.3"/></svg>Community</span>
+          <span class="handle">My Snowflake community journey</span>
+          <span class="desc">The story behind the 2026 Community Awards</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="block split" aria-labelledby="what-title">
+      <h2 id="what-title">What I do</h2>
+      <div class="prose">
+        <p>I write and publish technical articles through <strong>Snowflake Chronicles</strong> on Medium, build and open-source Snowflake projects on GitHub, and share what I learn on LinkedIn. What I value most is hearing from practitioners who use these ideas to solve real-world problems.</p>
+        <p>Knowing that this work helps others learn, solve problems and build better Snowflake solutions is what keeps me going.</p>
+        <p>One of the most rewarding parts of this journey has been connecting with people across the Snowflake community, exchanging ideas and learning from each other's experiences.</p>
+      </div>
+    </section>
+
+    <section class="block guide" id="guide" aria-labelledby="guide-title">
+      <aside class="rail" aria-label="Form questions">
+        <ol id="rail">
+          <li><a href="#q1">Your contact information</a></li>
+          <li><a href="#q2">Nominee's contact information</a></li>
+          <li><a href="#q3">Where to find me online</a></li>
+          <li><a href="#q4">How I contribute</a></li>
+          <li><a href="#q5">Why I'm a great candidate</a></li>
+          <li><a href="#q6">Mentioning your nomination</a></li>
+        </ol>
+        <a class="btn" href="https://www.surveymonkey.com/r/dshnomination?_fsi=W0NJ6JXv" target="_blank" rel="noopener">Open the nomination form</a>
+      </aside>
+
+      <div>
+        <h2 id="guide-title">Quick guide to the nomination form</h2>
+        <p class="guide-intro">Six short questions, all required. The details below are here so you can copy and paste.</p>
+
+        <ol class="q">
+          <li id="q1">
+            <span class="qn">Q1</span>
+            <div>
+              <h3>Your contact information</h3>
+              <p>Enter your own name, company and email address.</p>
+            </div>
+          </li>
+
+          <li id="q2">
+            <span class="qn">Q2</span>
+            <div>
+              <h3>Nominee's contact information</h3>
+              <div class="kvs">
+                <div class="kv"><span class="k">Name</span><span class="v">Satish Kumar</span><button class="copy" type="button" data-copy="Satish Kumar">Copy</button></div>
+                <div class="kv"><span class="k">Company</span><span class="v">LTM (previously LTIMindtree)</span><button class="copy" type="button" data-copy="LTM (previously LTIMindtree)">Copy</button></div>
+                <div class="kv"><span class="k">Email</span><span class="v">skrz2014@gmail.com</span><button class="copy" type="button" data-copy="skrz2014@gmail.com">Copy</button></div>
+              </div>
+            </div>
+          </li>
+
+          <li id="q3">
+            <span class="qn">Q3</span>
+            <div>
+              <h3>Where can we find the nominee online?</h3>
+              <div class="kvs">
+                <div class="kv"><span class="k">LinkedIn</span><a class="v" href="https://www.linkedin.com/in/satishkumar-snowflake/" target="_blank" rel="noopener">linkedin.com/in/satishkumar-snowflake</a><button class="copy" type="button" data-copy="https://www.linkedin.com/in/satishkumar-snowflake/">Copy</button></div>
+                <div class="kv"><span class="k">Community</span><a class="v" href="https://community.snowflake.com/s/profile/0053r00000AP1sB" target="_blank" rel="noopener">Snowflake Community profile</a><button class="copy" type="button" data-copy="https://community.snowflake.com/s/profile/0053r00000AP1sB">Copy</button></div>
+                <div class="kv"><span class="k">Medium</span><a class="v" href="https://snowflakechronicles.medium.com/" target="_blank" rel="noopener">snowflakechronicles.medium.com</a><button class="copy" type="button" data-copy="https://snowflakechronicles.medium.com/">Copy</button></div>
+                <div class="kv"><span class="k">Podcast</span><span class="v blank">Leave blank</span><span></span></div>
+                <div class="kv"><span class="k">Other</span><a class="v" href="https://github.com/satishkumarai" target="_blank" rel="noopener">github.com/satishkumarai</a><button class="copy" type="button" data-copy="https://github.com/satishkumarai">Copy</button></div>
+                <div class="kv"><span class="k">Other</span><a class="v" href="https://x.com/snowflakechrons" target="_blank" rel="noopener">x.com/snowflakechrons</a><button class="copy" type="button" data-copy="https://x.com/snowflakechrons">Copy</button></div>
+              </div>
+            </div>
+          </li>
+
+          <li id="q4">
+            <span class="qn">Q4</span>
+            <div>
+              <h3>How does the nominee contribute to the technical community?</h3>
+              <ul class="ticks">
+                <li>They build apps and contribute to open-source projects.</li>
+                <li>They write and publish articles and blogs.</li>
+              </ul>
+              <p>Leave other options unselected unless you have personally seen those contributions.</p>
+            </div>
+          </li>
+
+          <li id="q5">
+            <span class="qn">Q5</span>
+            <div>
+              <h3>What makes your nominee a great candidate? <small>(your own words)</small></h3>
+              <p>A few honest lines are plenty. If it helps, you could mention:</p>
+              <ul>
+                <li>How you know my work and how long you've followed it</li>
+                <li>Which article, repo or video helped you, and what problem it solved</li>
+                <li>Whether you've used something I shared at work or in your learning</li>
+                <li>How these contributions benefit the wider Snowflake community</li>
+              </ul>
+            </div>
+          </li>
+
+          <li id="q6">
+            <span class="qn">Q6</span>
+            <div>
+              <h3>Can we mention that the nomination came from you?</h3>
+              <p>Choose Yes or No. It's entirely your call, and either is fine. There's also an optional box to email yourself a copy of your responses.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </div>
+
+  <section class="final" aria-labelledby="final-title">
+    <div class="wrap">
+      <h2 id="final-title">Ready? It takes about 5 minutes.</h2>
+      <div class="actions">
+        <a class="btn" href="https://www.surveymonkey.com/r/dshnomination?_fsi=W0NJ6JXv" target="_blank" rel="noopener">Nominate Satish Kumar</a>
+        <button class="copy" type="button" data-copy="https://satishkumarai.github.io/nominate-satish/" data-done="Link copied">Copy page link to share</button>
+      </div>
+      <p>Thank you for being part of this journey. Your encouragement and support mean a lot.</p>
+      <p>Program details: <a href="https://www.snowflake.com/en/data-superheroes/" target="_blank" rel="noopener">snowflake.com/en/data-superheroes</a></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    Thank you for being part of a community that learns, builds and grows together.<br>
+    <strong>Satish Kumar</strong> · Snowflake Chronicles
+    <span class="fine">Personal page. Not affiliated with or endorsed by Snowflake Inc. or LTIMindtree.</span>
+  </div>
+</footer>
+
+<div class="sr" id="live" role="status" aria-live="polite"></div>
 
 <script>
-  var toast = document.getElementById('toast'), t;
-  function show(msg){ toast.textContent = msg; toast.classList.add('show'); clearTimeout(t); t = setTimeout(function(){ toast.classList.remove('show'); }, 1400); }
-  document.querySelectorAll('[data-copy]').forEach(function(b){
-    b.addEventListener('click', function(){
-      var text = b.getAttribute('data-copy');
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(function(){ show('Copied'); }, function(){ show('Copy failed'); });
-      } else {
-        var ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select();
-        try { document.execCommand('copy'); show('Copied'); } catch(e){ show('Copy failed'); }
-        document.body.removeChild(ta);
-      }
+(function(){
+  /* Copy buttons: label changes in place, no toast */
+  var live = document.getElementById('live');
+  function copyText(text){
+    if (navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(text);
+    return new Promise(function(resolve, reject){
+      var ta = document.createElement('textarea'); ta.value = text; ta.setAttribute('readonly','');
+      ta.style.position = 'fixed'; ta.style.opacity = '0'; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy') ? resolve() : reject(); } catch(e){ reject(e); }
+      document.body.removeChild(ta);
     });
+  }
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('[data-copy]'); if (!b) return;
+    var label = b.getAttribute('data-label') || b.textContent;
+    b.setAttribute('data-label', label);
+    function flash(msg, ok){
+      b.textContent = msg; if (ok) b.setAttribute('data-state','copied');
+      live.textContent = msg;
+      clearTimeout(b._t);
+      b._t = setTimeout(function(){ b.textContent = label; b.removeAttribute('data-state'); live.textContent = ''; }, 1600);
+    }
+    copyText(b.getAttribute('data-copy')).then(
+      function(){ flash(b.getAttribute('data-done') || 'Copied', true); },
+      function(){ flash('Copy failed', false); }
+    );
   });
+
+  /* Application window: days left and progress */
+  var win = document.getElementById('window');
+  var status = document.getElementById('window-status');
+  var track = document.getElementById('track');
+  var start = new Date(2026, 10, 9, 0, 0, 0);
+  var end = new Date(2026, 11, 18, 23, 59, 59);
+  var now = new Date(), day = 86400000, pct = 0, text;
+  function plural(n){ return n + (n === 1 ? ' day' : ' days'); }
+  if (now < start) {
+    text = 'Applications open in ' + plural(Math.ceil((start - now) / day)) + ', on November 9. They close on December 18, 2026.';
+  } else if (now <= end) {
+    pct = Math.min(100, Math.max(0, (now - start) / (end - start) * 100));
+    text = plural(Math.ceil((end - now) / day)) + ' left to apply. Applications close on December 18, 2026.';
+  } else {
+    pct = 100;
+    text = 'Applications for the 2027 program are closed. Check the official program page for what comes next.';
+  }
+  status.textContent = text;
+  track.style.setProperty('--p', pct.toFixed(1) + '%');
+  track.setAttribute('aria-label', text);
+
+  /* Guide rail: highlight the question in view */
+  var links = {};
+  document.querySelectorAll('#rail a').forEach(function(a){ links[a.getAttribute('href').slice(1)] = a; });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (!en.isIntersecting) return;
+        Object.keys(links).forEach(function(id){ links[id].removeAttribute('aria-current'); });
+        var a = links[en.target.id]; if (a) a.setAttribute('aria-current','true');
+      });
+    }, { rootMargin: '-15% 0px -70% 0px' });
+    document.querySelectorAll('.q > li').forEach(function(li){ io.observe(li); });
+  }
+})();
 </script>
 </body>
 </html>
