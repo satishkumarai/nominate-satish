@@ -62,7 +62,8 @@
   .hint{font-family:var(--display);font-size:15px;color:var(--ink-2);margin:14px 0 0}
 
   .window{margin-top:40px;padding-top:20px;border-top:1px solid var(--rule);max-width:460px}
-  .window-status{font:600 18px/1.35 var(--display);margin:0}
+  .window-days{font:700 clamp(26px,3vw,34px)/1.1 var(--display);letter-spacing:-.02em;margin:0 0 6px}
+  .window-status{font:500 15px/1.45 var(--display);color:var(--ink-2);margin:0}
   .track{position:relative;height:6px;border-radius:999px;background:var(--ice);margin:18px 0 10px}
   .fill{position:absolute;left:0;top:0;bottom:0;width:var(--p,0%);border-radius:inherit;background:var(--signal)}
   .pin{position:absolute;top:50%;left:var(--p,0%);width:14px;height:14px;border-radius:50%;background:var(--ink);transform:translate(-50%,-50%);box-shadow:0 0 0 3px var(--paper)}
@@ -207,22 +208,22 @@
         </div>
         <p class="hint">Takes about 5 minutes.</p>
 
-        <div class="window" id="window" data-open="2026-11-09" data-close="2026-12-18">
-          <p class="window-status" id="window-status">Applications for the 2027 program open on November 9 and close on December 18, 2026.</p>
+        <div class="window" id="window">
+          <p class="window-days" id="window-days">40 days to apply</p>
+          <p class="window-status" id="window-status">Applications open November 9 and close December 18, 2026.</p>
           <div class="track" id="track" role="img" aria-label="Application window progress">
             <span class="fill"></span><span class="pin"></span>
           </div>
           <div class="ends"><span>Opens Nov 9</span><span>Closes Dec 18</span></div>
-          <p class="note">Nominations are welcome year-round.</p>
         </div>
       </div>
 
       <figure>
         <div class="video-wrap">
-          <iframe src="https://www.youtube-nocookie.com/embed/1nuJt4taz9E" title="How to Vote" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe src="https://www.youtube-nocookie.com/embed/1nuJt4taz9E" title="How to Complete the Nomination" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <figcaption>
-          <span>How to Vote</span>
+          <span>How to Complete the Nomination</span>
           <a href="https://youtu.be/1nuJt4taz9E" target="_blank" rel="noopener">Watch on YouTube</a>
         </figcaption>
       </figure>
@@ -419,25 +420,43 @@
   });
 
   /* Application window: days left and progress */
-  var win = document.getElementById('window');
+  var daysEl = document.getElementById('window-days');
   var status = document.getElementById('window-status');
   var track = document.getElementById('track');
-  var start = new Date(2026, 10, 9, 0, 0, 0);
-  var end = new Date(2026, 11, 18, 23, 59, 59);
-  var now = new Date(), day = 86400000, pct = 0, text;
-  function plural(n){ return n + (n === 1 ? ' day' : ' days'); }
-  if (now < start) {
-    text = 'Applications open in ' + plural(Math.ceil((start - now) / day)) + ', on November 9. They close on December 18, 2026.';
-  } else if (now <= end) {
-    pct = Math.min(100, Math.max(0, (now - start) / (end - start) * 100));
-    text = plural(Math.ceil((end - now) / day)) + ' left to apply. Applications close on December 18, 2026.';
-  } else {
-    pct = 100;
-    text = 'Applications for the 2027 program are closed. Check the official program page for what comes next.';
+  /* Window runs Nov 9 00:00 to Dec 18 23:59:59 India Standard Time, so every visitor sees the same countdown */
+  var start = new Date('2026-11-09T00:00:00+05:30');
+  var end = new Date('2026-12-18T23:59:59+05:30');
+  var DAY = 86400000, HOUR = 3600000, MIN = 60000;
+  var totalDays = Math.round((end - start) / DAY);
+  function unit(n, word){ return n + ' ' + word + (n === 1 ? '' : 's'); }
+  function span(ms){
+    var d = Math.floor(ms / DAY), h = Math.floor((ms % DAY) / HOUR), m = Math.floor((ms % HOUR) / MIN);
+    if (d > 0) return unit(d, 'day') + ' ' + unit(h, 'hour');
+    if (h > 0) return unit(h, 'hour') + ' ' + unit(m, 'minute');
+    return unit(Math.max(m, 1), 'minute');
   }
-  status.textContent = text;
-  track.style.setProperty('--p', pct.toFixed(1) + '%');
-  track.setAttribute('aria-label', text);
+  function render(){
+    var now = new Date(), pct = 0, headline, line;
+    if (now < start) {
+      headline = 'Opens in ' + span(start - now);
+      line = 'Applications open November 9 and close December 18, 2026. That is ' + unit(totalDays, 'day') + ' to apply.';
+    } else if (now <= end) {
+      pct = Math.min(100, Math.max(0, (now - start) / (end - start) * 100));
+      var left = end - now;
+      headline = (left < DAY ? 'Last day: ' : '') + span(left) + ' left to apply';
+      line = 'Applications close on December 18, 2026.';
+    } else {
+      pct = 100;
+      headline = 'Applications are closed';
+      line = 'The 2027 window has ended. Check the official program page for what comes next.';
+    }
+    daysEl.textContent = headline;
+    status.textContent = line;
+    track.style.setProperty('--p', pct.toFixed(1) + '%');
+    track.setAttribute('aria-label', headline + '. ' + line);
+  }
+  render();
+  setInterval(render, 30000);
 
   /* Guide rail: highlight the question in view */
   var links = {};
