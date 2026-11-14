@@ -8,15 +8,15 @@
 <meta name="theme-color" content="#F2F6F8" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#09131A" media="(prefers-color-scheme: dark)">
 <meta property="og:title" content="Support My 2027 Snowflake Data Superhero Nomination | Satish Kumar">
-<meta property="og:description" content="200+ articles, 45+ open-source repos, 2026 Community Awards Open Source Impact Winner (APJ). Nomination takes ~5 minutes.">
+<meta property="og:description" content="200+ articles, 50+ open-source repos, 2026 Community Awards Open Source Impact Winner (APJ). Nomination takes ~5 minutes.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Source+Serif+4:opsz,wght@8..60,400..600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper:#F2F6F8; --surface:#FFFFFF; --ink:#0D1A23; --ink-2:#44586A;
-    --rule:#D3DFE6; --ice:#DCEBF2; --glacier:#006E96; --signal:#00A8E0;
+    --paper:#F2F6F8; --surface:#FFFFFF; --ink:#0B2540; --ink-2:#44586A;
+    --rule:#D3DFE6; --ice:#DCEBF2; --glacier:#006E96; --signal:#00BFFF;
     --display:"Bricolage Grotesque","Segoe UI",system-ui,-apple-system,sans-serif;
     --serif:"Source Serif 4",Charter,"Iowan Old Style",Georgia,serif;
   }
@@ -46,7 +46,7 @@
   /* Shared type */
   h1,h2,h3{font-family:var(--display);margin:0}
   h2{font-size:clamp(28px,3.4vw,40px);line-height:1.1;font-weight:700;letter-spacing:-.02em}
-  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border:0;border-radius:12px;background:var(--ink);color:var(--paper);font:600 17px/1 var(--display);text-decoration:none;cursor:pointer;transition:background-color .15s}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;border:0;border-radius:999px;background:var(--ink);color:var(--paper);font:600 17px/1 var(--display);text-decoration:none;cursor:pointer;transition:background-color .15s}
   .btn:hover{background:var(--glacier);color:var(--paper)}
   .textlink{font-family:var(--display);font-weight:600;font-size:16px;text-decoration:underline;text-decoration-color:var(--rule);text-underline-offset:5px;text-decoration-thickness:2px}
   .textlink:hover{color:var(--glacier);text-decoration-color:currentColor}
@@ -78,10 +78,10 @@
   figcaption a:hover{color:var(--glacier);text-decoration-color:currentColor}
 
   /* Proof */
-  .proof{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,1fr);border-block:1px solid var(--rule)}
+  .proof{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);border-block:1px solid var(--rule)}
   .proof li{padding:28px 20px}
   .proof li+li{border-left:1px solid var(--rule)}
-  .proof b{display:block;font:700 clamp(30px,3.4vw,44px)/1 var(--display);letter-spacing:-.02em}
+  .proof b{display:block;font:700 clamp(28px,2.9vw,38px)/1 var(--display);letter-spacing:-.02em}
   .proof span{display:block;margin-top:10px;font:400 14px/1.4 var(--display);color:var(--ink-2)}
 
   /* Award */
@@ -91,6 +91,7 @@
   .award p{margin:0;color:var(--ink-2);max-width:60ch}
   .award a{color:var(--ink);text-underline-offset:4px}
   .award a:hover{color:var(--glacier)}
+  .award-card{width:clamp(180px,22vw,240px);height:auto;border-radius:16px;box-shadow:0 10px 28px rgba(0,40,70,.18)}
 
   /* Sections */
   .block{padding-block:clamp(56px,9vw,112px) 0}
@@ -182,6 +183,37 @@
   @media (prefers-reduced-motion: reduce){
     *{transition:none !important}
   }
+  /* Reach row, quotes, topic tags, hint */
+  .proof+.proof{border-top:0}
+  .proof-note{font:400 13px/1.5 var(--display);color:var(--ink-2);margin:12px 0 0}
+  @media (min-width:720px){ .proof-reach{grid-template-columns:repeat(4,1fr)} }
+  @media (min-width:720px) and (max-width:959px){
+    .proof:not(.proof-reach){grid-template-columns:repeat(3,1fr)}
+    .proof:not(.proof-reach) li:nth-child(n+4){border-top:1px solid var(--rule)}
+    .proof:not(.proof-reach) li:nth-child(4){border-left:0}
+  }
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;list-style:none;margin:28px 0 0;padding:0}
+  .quotes li{background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:24px}
+  .quotes blockquote{margin:0;font:400 18px/1.6 var(--serif)}
+  .quotes cite{display:block;margin-top:14px;font:500 14px/1.4 var(--display);color:var(--ink-2);font-style:normal}
+  @media (max-width:959px){ .quotes{grid-template-columns:1fr} }
+  .tags{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0;padding:0}
+  .tags li{border:1px solid var(--rule);border-radius:999px;padding:6px 14px;font:500 14px/1.3 var(--display);background:var(--surface)}
+  .hint{font-size:15px;color:var(--ink-2)}
+  .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;list-style:none;margin:28px 0 0;padding:0}
+  .projects li{background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:22px}
+  .projects .cat{font:600 13px/1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--glacier)}
+  .projects a{display:block;margin:10px 0 8px;font:700 19px/1.3 var(--display);color:var(--ink);text-underline-offset:4px}
+  .projects a:hover{color:var(--glacier)}
+  .projects p{margin:0;font-size:16px;line-height:1.6;color:var(--ink-2)}
+  .more-projects{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 0;padding:0}
+  .more-projects a{display:inline-block;border:1px solid var(--rule);border-radius:999px;padding:8px 16px;background:var(--surface);font:600 14px/1.3 var(--display);color:var(--ink);text-decoration:none}
+  .more-projects a:hover{border-color:var(--glacier);color:var(--glacier)}
+  .final .closing-line{font:italic 400 clamp(19px,2vw,24px)/1.5 var(--serif);color:var(--paper);max-width:40ch;margin-bottom:24px}
+  .voices-intro{margin:16px 0 0;max-width:62ch;font-size:19px;line-height:1.7}
+  .quotes .ctx{margin:12px 0 0;font:400 15px/1.5 var(--display);color:var(--ink-2)}
+  .voices-notes{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:10px}
+  .voices-notes li{max-width:62ch;font:400 17px/1.6 var(--serif);color:var(--ink-2)}
 </style>
 </head>
 <body>
@@ -230,18 +262,46 @@
 
     <ul class="proof" aria-label="Highlights">
       <li><b>200+</b><span>Technical articles</span></li>
-      <li><b>45+</b><span>Public GitHub repos</span></li>
-      <li><b>12,000+</b><span>LinkedIn connections</span></li>
+      <li><b>50+</b><span>Open-source repos</span></li>
+      <li><b>13,000+</b><span>LinkedIn followers</span></li>
+      <li><b>600+</b><span>Medium followers</span></li>
       <li><b>2024</b><span>Snowflake Squad member since</span></li>
       <li><b>2×</b><span>Snowflake Certified</span></li>
     </ul>
+    <ul class="proof proof-reach" aria-label="Reach and engagement">
+      <li><b>346K+</b><span>LinkedIn impressions, last 365 days</span></li>
+      <li><b>70K+</b><span>Members reached on LinkedIn</span></li>
+      <li><b>50%</b><span>Of impressions from outside my network</span></li>
+      <li><b>212</b><span>GitHub commits in 2026</span></li>
+    </ul>
+    <p class="proof-note">LinkedIn figures cover the 365 days to November 13, 2026. Impressions count views, not unique people.</p>
 
     <section class="award" aria-labelledby="award-title">
-      <div class="year" aria-hidden="true">2026</div>
+      <img class="award-card" src="winner-card.webp" alt="Snowflake Community Awards: Open Source Impact 2026 Winner, Satish Kumar" width="640" height="640" loading="lazy">
       <div>
         <h3 id="award-title">2026 Snowflake Community Awards – Open Source Impact Winner (APJ)</h3>
-        <p>One of 18 winners selected from 704 nominations. I was nominated by 12 community members, reached the finalist round, and received the award through community voting. Thank you to everyone who nominated and voted. I've shared the story behind this journey below.</p>
+        <p>One of 18 winners from 704 nominations and 53 finalists. I was nominated by 12 community members and received the award through community voting. Thank you to everyone who nominated and voted. I’ve shared the story behind this journey below.</p>
       </div>
+    </section>
+
+    <section class="block" aria-labelledby="voices-title">
+      <h2 id="voices-title">What practitioners say</h2>
+      <p class="voices-intro">Over time, I have received responses from technology leaders, architects, engineers, Snowflake practitioners and people who are just getting started with the platform.</p>
+      <ul class="quotes">
+        <li><blockquote>“A really solid breakdown of what changed and what it means in practice.”</blockquote><cite>A Snowflake Data Superhero</cite></li>
+        <li><blockquote>“I read them religiously and it’s helping our team a lot.”</blockquote><p class="ctx">Encouraging to know the articles were helping an entire team, not just an individual reader.</p><cite>A data engineering leader</cite></li>
+        <li><blockquote>“I love reading the context you publish. It inspires me to think deeper about the topics, and push my team to a higher levels of implementation.”</blockquote><p class="ctx">We’ve also exchanged thoughts on business context, Cortex Code and semantic views.</p><cite>A digital transformation leader</cite></li>
+        <li><blockquote>“I’ve been going through some of your writing while building a Snowflake and dbt pipeline for a personal project, and it genuinely helped me get the incremental loading logic right.”</blockquote><cite>A student builder</cite></li>
+        <li><blockquote>“A shoutout to Satish Kumar whose work on CoCo Automations inspired the demo topic for this session.”</blockquote><cite>A speaker at a Snowflake user group meetup</cite></li>
+        <li><blockquote>“Really useful architectural perspective! I like the focus on making CoCo automations production-ready rather than stopping at getting them to work. Versioning, access controls, and monitoring are what make these workflows reliable as they scale beyond individual experiments.”</blockquote><cite>A reader of the CoCo Automations article</cite></li>
+        <li><blockquote>“Great Article with lot of practical scenarios”</blockquote><cite>A reader of the Cortex Agent security article</cite></li>
+        <li><blockquote>“solid gold”</blockquote><cite>On the Keypair Manager article</cite></li>
+      </ul>
+      <ul class="voices-notes">
+        <li>A reader followed my article on building a Snowflake AI agent with an MCP server, reached the SQL-generation stage and sent a technical question about execution.</li>
+        <li>A data consultant at an analytics firm shared that the articles helped with their Snowflake upskilling.</li>
+      </ul>
+      <p class="proof-note">Shared anonymously from comments I’ve received.</p>
     </section>
 
     <section class="block" aria-labelledby="work-title">
@@ -258,19 +318,41 @@
           <span class="desc">Open-source Snowflake projects and reference implementations</span>
         </a>
         <a class="row" href="https://satishkumarai.github.io/vote4satish/" target="_blank" rel="noopener">
-          <span class="src"><svg class="ico com" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><circle cx="17" cy="9" r="2.5"/><path d="M16.5 13.7c2.7 0 4.5 1.8 4.5 4.3"/></svg>Community</span>
-          <span class="handle">My Snowflake community journey</span>
-          <span class="desc">The story behind the 2026 Community Awards</span>
+          <span class="src"><svg class="ico com" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5"/><circle cx="17" cy="9" r="2.5"/><path d="M16.5 13.7c2.7 0 4.5 1.8 4.5 4.3"/></svg>Award story</span>
+          <span class="handle">My 2026 Community Awards journey</span>
+          <span class="desc">The story, the ceremony video and the community behind it</span>
         </a>
       </div>
+    </section>
+
+    <section class="block" aria-labelledby="projects-title">
+      <h2 id="projects-title">Featured projects</h2>
+      <ul class="projects">
+        <li><span class="cat">FinOps and cost</span><a href="https://github.com/satishkumarai/snowflake-finops-framework" target="_blank" rel="noopener">Snowflake FinOps Framework</a><p>Cost attribution, monitoring, budget management, AI service governance, per-user quotas and automated enforcement.</p></li>
+        <li><span class="cat">AI security and governance</span><a href="https://github.com/satishkumarai/cortex-guardrails-project" target="_blank" rel="noopener">Cortex AI Guardrails – Enterprise AISOC</a><p>AI guardrail monitoring, risk scoring, incident management, behavioral analytics, MITRE ATLAS mapping and compliance reporting.</p></li>
+        <li><span class="cat">Cortex Search and RAG</span><a href="https://github.com/satishkumarai/cortex-search-retrieve-rag" target="_blank" rel="noopener">Cortex Search – Retrieve and RAG</a><p>Practical examples of retrieval-augmented generation and search using Snowflake Cortex.</p></li>
+        <li><span class="cat">Observability</span><a href="https://github.com/satishkumarai/snowflake-cortex-search-monitoring-v2" target="_blank" rel="noopener">Cortex Search Observability Platform</a><p>Telemetry, SLA monitoring, cost attribution, anomaly detection, PII masking and operational reporting, with a published validation suite.</p></li>
+        <li><span class="cat">MCP and AI agents</span><a href="https://github.com/satishkumarai/snowflake-mcp-cortex-agent" target="_blank" rel="noopener">Snowflake MCP Cortex Agent</a><p>Exposes Snowflake capabilities to AI applications through MCP, combining Cortex Search, Cortex Analyst, Python UDFs, authentication, RBAC and monitoring.</p></li>
+      </ul>
+      <ul class="more-projects" aria-label="More projects">
+        <li><a href="https://github.com/satishkumarai/iceberg-v3-upgrade" target="_blank" rel="noopener">Iceberg v3 Upgrade Toolkit</a></li>
+        <li><a href="https://github.com/satishkumarai/snowflake-code-bundles-production" target="_blank" rel="noopener">Code Bundles – Production Example</a></li>
+        <li><a href="https://github.com/satishkumarai/snowflake-external-secret-providers" target="_blank" rel="noopener">External Secret Providers</a></li>
+        <li><a href="https://github.com/satishkumarai/snowflake-keypair-manager" target="_blank" rel="noopener">Keypair Manager</a></li>
+      </ul>
+      <p class="proof-note">These are independently developed learning resources and engineering reference implementations, not customer deployments, and not every project is ready for direct production use. Each repository documents its scope, assumptions and validation approach.</p>
     </section>
 
     <section class="block split" aria-labelledby="what-title">
       <h2 id="what-title">What I do</h2>
       <div class="prose">
+        <p>My first Snowflake article went up on September 27, 2024. It started as a way to keep track of what I was learning, and grew into <strong>Snowflake Chronicles</strong>.</p>
         <p>I write and publish technical articles through <strong>Snowflake Chronicles</strong> on Medium, build and open-source Snowflake projects on GitHub, and share what I learn on LinkedIn. What I value most is hearing from practitioners who use these ideas to solve real-world problems.</p>
         <p>Knowing that this work helps others learn, solve problems and build better Snowflake solutions is what keeps me going.</p>
         <p>One of the most rewarding parts of this journey has been connecting with people across the Snowflake community, exchanging ideas and learning from each other's experiences.</p>
+        <ul class="tags" aria-label="Topics I write about">
+          <li>Architecture &amp; administration</li><li>Data engineering</li><li>FinOps</li><li>Developer productivity</li><li>Cortex AI &amp; agents</li><li>Apache Iceberg</li><li>Governance</li>
+        </ul>
       </div>
     </section>
 
@@ -366,6 +448,7 @@
         <a class="btn" href="https://www.surveymonkey.com/r/dshnomination?_fsi=W0NJ6JXv" target="_blank" rel="noopener">Nominate Satish for 2027</a>
         <button class="copy" type="button" data-copy="https://satishkumarai.github.io/nominate-satish/" data-done="Link copied">Copy page link to share</button>
       </div>
+      <p class="closing-line">“I’m not looking for a title. I want to keep learning in public, building useful things, and making it a little easier for the next person.”</p>
       <p>Thank you for being part of this journey. Your encouragement and support mean a lot.</p>
       <p>Program details: <a href="https://www.snowflake.com/en/data-superheroes/" target="_blank" rel="noopener">snowflake.com/en/data-superheroes</a></p>
     </div>
@@ -376,7 +459,7 @@
   <div class="wrap">
     Thank you for being part of a community that learns, builds and grows together.<br>
     <strong>Satish Kumar</strong> · Snowflake Chronicles
-    <span class="fine">Personal page. Not affiliated with or endorsed by Snowflake Inc. or LTIMindtree.</span>
+    <span class="fine">Personal page. Not affiliated with or endorsed by Snowflake Inc. or LTM (formerly LTIMindtree).</span>
   </div>
 </footer>
 
